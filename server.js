@@ -33,6 +33,6 @@ io.on('connection', randomGif);
 function randomGif(socket) {
   var index =  Math.floor((Math.random() * gifs.length - 1) + 0); 
   socket.emit('gif', { 'gif': gifs[index] });
-  var randomTime = Math.floor((Math.random() * 7) + 2) * 1000; 
+  var randomTime = Math.floor((Math.random() * 6) + 2) * 1000; 
   setTimeout(function() { randomGif(socket) }, randomTime);
 }
