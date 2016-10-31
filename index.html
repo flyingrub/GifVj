@@ -1,0 +1,45 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>QuantumFreaken6</title>
+	<link href="utils/archillect.css" rel="stylesheet" type="text/css"><meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<style type="text/css">
+		body {
+			background-color: black;
+			overflow-y: auto;
+		}
+	</style>
+	<script src="utils/socket.js"></script>
+	<script src="utils/jquery.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function () {
+		var socket = io.connect('http://localhost:1337');
+		socket.on('gif', function (data) {
+			$(".scr").css("background-image", "url(gif/" + data.gif + ")");
+		});
+		$(window).click(fullscreen);
+	});
+
+	function fullscreen() {
+		var elem = document.getElementById("screen");
+		if (elem.requestFullscreen) {
+			elem.requestFullscreen();
+		} else if (elem.msRequestFullscreen) {
+			elem.msRequestFullscreen();
+		} else if (elem.mozRequestFullScreen) {
+			elem.mozRequestFullScreen();
+		} else if (elem.webkitRequestFullscreen) {
+			elem.webkitRequestFullscreen();
+		}
+	}
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="screenelements">
+			<div id="screen" class="">
+				<div id="screenbg" class="scr" style=""></div>
+				<div id="screenfg" class="scr" style=""></div>
+			</div>
+		</div>
+	</div>
+</body></html>
