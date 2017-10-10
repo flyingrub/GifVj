@@ -1,0 +1,25 @@
+{
+  "name": "gifvj",
+  "version": "1.0.0",
+  "description": "Based on archillect.com",
+  "main": "server.js",
+  "dependencies": {
+    "socket.io": "^2.0.3",
+    "socket.io-client": "^2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flyingrub/GifVj.git"
+  },
+  "author": "",
+  "license": "GPLv2",
+  "bugs": {
+    "url": "https://github.com/flyingrub/GifVj/issues"
+  },
+  "homepage": "https://github.com/flyingrub/GifVj#readme"
+}
