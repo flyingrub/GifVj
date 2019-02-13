@@ -1,3 +1,4 @@
 gif/*.gif
 gif/lastindex
 node_modules
+.vs/

@@ -46,11 +46,18 @@ def main():
     """
     global index
     arguments = docopt(__doc__, version='v0.0.1')
+
     index = int(arguments['<index>']) if arguments['<index>'] else 1
+    if index == 1:
+        if os.path.isfile("lastindex") :
+            with open("lastindex", 'r') as lastindex:
+                index = int(lastindex.read())
+
     signal.signal(signal.SIGINT, signal_handler)
     logger.debug('Downloading to '+os.getcwd()+'...')
 
     while index > 0:
+        index -= 1
         archillect_request = requests.get(default_url.format(index))
         if archillect_request.history:
             continue
@@ -66,7 +73,7 @@ def main():
             with open(filename, 'wb') as out_file:
                 out_file.write(img)
 
-        index -= 1
+        
     end()
 
 
