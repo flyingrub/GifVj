@@ -52,6 +52,8 @@ def main():
 
     while index > 0:
         archillect_request = requests.get(default_url.format(index))
+        if archillect_request.history:
+            continue
         soup = BeautifulSoup.BeautifulSoup(archillect_request.text, 'lxml')
         gif = soup.find(id="ii")['src']
 
